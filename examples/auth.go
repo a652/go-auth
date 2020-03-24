@@ -13,9 +13,9 @@ import (
 var appIDAndSecretMap = make(map[string]string)
 
 func main() {
-	appIDAndSecretMap["12345"] = "652899"
+	appIDAndSecretMap["12345"] = "54321"
 	ts := strconv.FormatInt(time.Now().Unix(), 10)
-	token := token.GenToken("/auth", "12345", "652899", ts)
+	token := token.GenToken("/auth", "12345", "54321", ts)
 	rawURL := fmt.Sprintf("http://charter652.com/auth?appid=12345&token=%s&ts=%s", token, ts)
 	fmt.Printf("rawURL: %s\n", rawURL)
 	cs := store.NewDefaultCredentialStore(appIDAndSecretMap)
